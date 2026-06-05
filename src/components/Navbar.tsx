@@ -20,16 +20,16 @@ export default function Navbar() {
     { key: 'events',    href: '#events' },
     { key: 'media',     href: '#media' },
     { key: 'gallery',   href: '#gallery' },
-    { key: 'astrology', href: '#services' },
+    { key: 'services',  href: '#services' },
     { key: 'contact',   href: '#contact' },
   ] as const
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent h-[72px] flex items-center ${scrolled ? 'scrolled border-outline-variant/30' : 'bg-transparent'}`}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 border-b h-[72px] flex items-center ${scrolled ? 'scrolled border-outline-variant/30' : 'nav-glass border-transparent'}`}
     >
       <div className="flex justify-between items-center max-w-container mx-auto px-margin-mobile md:px-gutter w-full">
-        <a href="#" className="font-headline text-headline-md font-bold italic text-primary tracking-tight">
+        <a href="#" className="font-headline text-headline-md font-bold italic tracking-tight text-primary">
           {t(c.logo, lang)}
         </a>
 

@@ -61,6 +61,11 @@
   .reveal-delay-300 { transition-delay: 300ms; }
   .reveal-delay-400 { transition-delay: 400ms; }
 
+  nav.nav-glass {
+    background: rgba(250, 249, 245, 0.55);
+    backdrop-filter: blur(12px);
+  }
+
   nav.scrolled {
     background: rgba(250, 249, 245, 0.85) !important;
     backdrop-filter: blur(16px);
