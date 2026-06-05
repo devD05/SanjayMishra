@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-surface font-body text-on-surface; }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(252, 251, 247, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 40px -10px rgba(143, 78, 0, 0.08);
+  }
+
+  .ethereal-shadow {
+    box-shadow: 0 25px 50px -12px rgba(233, 195, 73, 0.08);
+  }
+
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-effect::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0) 40%,
+      rgba(255,255,255,0.4) 50%,
+      rgba(255,255,255,0) 60%,
+      rgba(255,255,255,0) 100%
+    );
+    transform: rotate(45deg);
+    animation: shimmer 4s infinite;
+  }
+
+  /* Reveal: visible by default, JS enhances with scroll animation */
+  .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  /* JS adds .will-reveal to hide before scroll-trigger */
+  .will-reveal {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  .will-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-100 { transition-delay: 100ms; }
+  .reveal-delay-200 { transition-delay: 200ms; }
+  .reveal-delay-300 { transition-delay: 300ms; }
+  .reveal-delay-400 { transition-delay: 400ms; }
+
+  nav.scrolled {
+    background: rgba(250, 249, 245, 0.85) !important;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-150%) rotate(45deg); }
+  100% { transform: translateX(150%) rotate(45deg); }
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
