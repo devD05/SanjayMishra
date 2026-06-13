@@ -89,10 +89,10 @@ export default function MediaSection() {
                     href={`https://youtube.com/watch?v=${video.youtubeId}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform"
+                    className="w-20 h-20 md:w-16 md:h-16 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform"
                   >
                     <span
-                      className="material-symbols-outlined text-white text-3xl"
+                      className="material-symbols-outlined text-white text-5xl md:text-3xl"
                       style={{ fontVariationSettings: "'FILL' 1" }}
                     >
                       play_arrow
