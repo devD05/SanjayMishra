@@ -23,6 +23,22 @@ export default function AboutSection() {
       <div className="max-w-container mx-auto px-margin-mobile md:px-gutter">
         <div className="grid md:grid-cols-2 gap-16 items-center">
 
+          <div className="reveal relative rounded-[2rem] overflow-hidden ethereal-shadow group">
+            <Image
+              src="/images/about.jpg"
+              alt="Pandit Sanjay Krishn Mishra"
+              width={600}
+              height={600}
+              className="w-full h-[600px] object-cover object-top group-hover:scale-105 transition-transform duration-1000"
+              style={{ filter: 'contrast(1.1) brightness(1.08) saturate(1.15)' }}
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
+              <p className="text-white italic font-headline text-headline-md">
+                {t(c.photo_quote, lang)}
+              </p>
+            </div>
+          </div>
+
           <div className="reveal reveal-delay-200">
             <span className="font-body text-label-md text-secondary uppercase tracking-[0.2em] block mb-6">
               {t(c.label, lang)}
@@ -53,22 +69,6 @@ export default function AboutSection() {
                   </span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="reveal relative rounded-[2rem] overflow-hidden ethereal-shadow group">
-            <Image
-              src="/images/about.jpg"
-              alt="Pandit Sanjay Krishn Mishra"
-              width={600}
-              height={600}
-              className="w-full h-[600px] object-cover object-top group-hover:scale-105 transition-transform duration-1000"
-              style={{ filter: 'contrast(1.1) brightness(1.08) saturate(1.15)' }}
-            />
-            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
-              <p className="text-white italic font-headline text-headline-md">
-                {t(c.photo_quote, lang)}
-              </p>
             </div>
           </div>
         </div>
