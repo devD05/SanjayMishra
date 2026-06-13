@@ -69,8 +69,7 @@ export default function MediaSection() {
             {c.videos.map((video, i) => (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-[1.5rem] ethereal-shadow flex-none"
-                style={{ width: 'calc(50% - 12px)' }}
+                className="group relative overflow-hidden rounded-[1.5rem] ethereal-shadow flex-none w-[82vw] md:w-[calc(50%-12px)]"
               >
                 {/* Thumbnail */}
                 <div className="w-full aspect-video relative overflow-hidden">
@@ -89,10 +88,10 @@ export default function MediaSection() {
                     href={`https://youtube.com/watch?v=${video.youtubeId}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-20 h-20 md:w-16 md:h-16 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform"
+                    className="w-14 h-14 md:w-16 md:h-16 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform"
                   >
                     <span
-                      className="material-symbols-outlined text-white text-5xl md:text-3xl"
+                      className="material-symbols-outlined text-white text-4xl md:text-3xl"
                       style={{ fontVariationSettings: "'FILL' 1" }}
                     >
                       play_arrow
@@ -101,9 +100,9 @@ export default function MediaSection() {
                 </div>
 
                 {/* Title overlay */}
-                <div className="absolute bottom-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform">
-                  <h3 className="text-white font-headline text-headline-md leading-tight">{t(video.title, lang)}</h3>
-                  <p className="text-white/70 font-body text-label-md mt-1">{t(video.sub, lang)}</p>
+                <div className="absolute bottom-0 w-full p-5 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform">
+                  <h3 className="text-white font-headline text-xl md:text-headline-md leading-tight">{t(video.title, lang)}</h3>
+                  <p className="text-white/70 font-body text-sm md:text-label-md mt-1">{t(video.sub, lang)}</p>
                 </div>
               </div>
             ))}
